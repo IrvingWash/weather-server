@@ -60,10 +60,21 @@ app.get(
 app.get(
 	'/weather',
 	(req, res) => {
+		if (!req.query.address) {
+			res.send(
+				{
+					errorMessage: 'No address provided',
+				}
+			);
+
+			return;
+		}
+
 		res.send(
 			{
 				temperature: 17,
-				location: 'Rostov-na-Donu',
+				location: 'Tokyo, Japan',
+				address: req.query.address,
 			}
 		);
 	}
