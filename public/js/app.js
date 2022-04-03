@@ -17,7 +17,7 @@ function getWeather(event) {
 	}
 
 	if (address === '') {
-		messageOne.textContent = 'Enter and address';
+		messageOne.textContent = 'Enter an address';
 
 		return;
 	}

@@ -18,7 +18,7 @@ function forecast(lat, long, callback) {
 
 				callback(
 					undefined,
-					`${currentData.weather_descriptions[0]}. It is currently ${currentData.temperature} degrees out. There is a ${currentData.precip}% chance of rain.`
+					`${currentData.weather_descriptions[0]}. It is currently ${currentData.temperature} degrees out. It feels like ${currentData.feelslike}. There is a ${currentData.precip}% chance of rain.`
 				);
 			}
 		}
