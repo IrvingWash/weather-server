@@ -3,6 +3,9 @@ const path = require('path');
 const express = require('express');
 const hbs = require('hbs');
 
+const geocode = require('./utils/geocode');
+const forecast = require('./utils/forecast');
+
 const app = express();
 
 // Paths for Express config
@@ -60,7 +63,9 @@ app.get(
 app.get(
 	'/weather',
 	(req, res) => {
-		if (!req.query.address) {
+		const searchAddress = req.query.address;
+
+		if (!searchAddress) {
 			res.send(
 				{
 					errorMessage: 'No address provided',
@@ -70,13 +75,28 @@ app.get(
 			return;
 		}
 
-		res.send(
-			{
-				temperature: 17,
-				location: 'Tokyo, Japan',
-				address: req.query.address,
+		geocode(searchAddress, (error, { latitude, longitude, location }) => {
+			if (error !== undefined) {
+				res.send({ error });
+		
+				return;
 			}
-		);
+		
+			forecast(latitude, longitude, (error, forecastData) => {
+				if (error !== undefined) {
+					res.send({ error });
+		
+					return;
+				}
+		
+				res.send(
+					{
+						location,
+						forecastData,
+					}
+				)
+			});
+		});
 	}
 );
 
