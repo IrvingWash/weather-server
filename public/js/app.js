@@ -25,7 +25,7 @@ function getWeather(event) {
 	messageOne.textContent = 'Loading...';
 	messageTwo.textContent = '';
 
-	fetch(`http://localhost:3000/weather?address=${address}`)
+	fetch(`/weather?address=${address}`)
 		.then((response) => {
 			response.json()
 				.then((data) => {
