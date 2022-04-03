@@ -75,7 +75,7 @@ app.get(
 			return;
 		}
 
-		geocode(searchAddress, (error, { latitude, longitude, location }) => {
+		geocode(searchAddress, (error, { latitude, longitude, location } = {}) => {
 			if (error !== undefined) {
 				res.send({ error });
 		

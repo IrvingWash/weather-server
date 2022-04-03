@@ -13,6 +13,8 @@ function geocode(address, callback) {
 				callback('Unable to connect to MapBox');
 			} else if (body.message !== undefined) {
 				callback(body.message);
+			} else if (body.features[0] === undefined) {
+				callback('Wrong address');
 			} else {
 				const searchResult = body.features[0];
 
