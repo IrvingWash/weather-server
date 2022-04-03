@@ -16,6 +16,12 @@ function getWeather(event) {
 		return;
 	}
 
+	if (address === '') {
+		messageOne.textContent = 'Enter and address';
+
+		return;
+	}
+
 	messageOne.textContent = 'Loading...';
 	messageTwo.textContent = '';
 

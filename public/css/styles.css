@@ -32,6 +32,19 @@ h1 {
 	width: 250px;
 }
 
+input {
+	padding: 8px;
+	border: 1px solid #cccccc;
+}
+
+button {
+	padding: 9px;
+	border: none;
+	background-color: #888888;
+	color: white;
+	cursor: pointer;
+}
+
 footer {
 	margin-top: 15px;
 	padding: 15px 0;
