@@ -1,7 +1,40 @@
-h1 {
-	color: grey;
+body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	max-width: 650px;
+	margin: 0 auto;
+	padding: 0 15px;
+	font-family: arial;
+	color: #333333;
 }
 
-img {
+.main-content {
+	flex-grow: 1;
+}
+
+header {
+	margin: 15px 0 45px;
+}
+
+header a {
+	color: #888888;
+	margin-right: 15px;
+	text-decoration: none;
+}
+
+h1 {
+	font-size: 65px;
+	margin-bottom: 15px
+}
+
+.portrait {
 	width: 250px;
+}
+
+footer {
+	margin-top: 15px;
+	padding: 15px 0;
+	border-top: 1px solid #eeeeee;
+	color: #888888;
 }

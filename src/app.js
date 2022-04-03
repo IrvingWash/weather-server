@@ -25,7 +25,7 @@ app.get(
 			'index',
 			{
 				title: 'Weather',
-				name: 'Wash Irving',
+				name: 'Washington Irving',
 			}
 		);
 	}
@@ -38,7 +38,7 @@ app.get(
 			'about',
 			{
 				title: 'About',
-				name: 'Wash Irving',
+				name: 'Washington Irving',
 			}
 		);
 	}
@@ -51,7 +51,7 @@ app.get(
 			'help',
 			{
 				title: 'Help',
-				name: 'Wash Irving',
+				name: 'Washington Irving',
 			}
 		);
 	}
@@ -77,7 +77,7 @@ app.get(
 			{
 				title: '404',
 				error: 'Help article not found',
-				name: 'Wash Irving',
+				name: 'Washington Irving',
 			}
 		);
 	}
@@ -91,7 +91,7 @@ app.get(
 			{
 				title: '404',
 				error: 'Page not found',
-				name: 'Wash Irving',
+				name: 'Washington Irving',
 			}
 		);
 	}
