@@ -1,5 +1,7 @@
 const weatherForm = document.querySelector('form');
 const searchInput = document.querySelector('input');
+const messageOne = document.getElementById('messageOne');
+const messageTwo = document.getElementById('messageTwo');
 
 weatherForm.addEventListener('submit', getWeather);
 
@@ -14,22 +16,29 @@ function getWeather(event) {
 		return;
 	}
 
+	messageOne.textContent = 'Loading...';
+	messageTwo.textContent = '';
+
 	fetch(`http://localhost:3000/weather?address=${address}`)
 		.then((response) => {
 			response.json()
 				.then((data) => {
 					if (data.error) {
-						console.log(data.error);
+						messageOne.textContent = data.error;
 
-						searchInput.value = '';
+						clearInput(searchInput);
 
 						return;
 					}
 
-					console.log(data.location);
-					console.log(data.forecastData);
+					messageOne.textContent = data.location;
+					messageTwo.textContent = data.forecastData;
 
-					searchInput.value = '';
+					clearInput(searchInput);
 				});
 		});
+}
+
+function clearInput(input) {
+	input.value = '';
 }
